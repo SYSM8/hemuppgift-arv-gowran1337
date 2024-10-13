@@ -4,25 +4,26 @@ namespace Hemuppgift_Arv_Temp.Game
 {
     public class Board
     {
+
         public int noPins;
 
-        public Board(int noPins)
+        //public Board(int noPins)
+        //{
+        //    this.noPins = noPins;
+        //}
+
+
+
+        public void SetUp()
         {
-            this.noPins = noPins;
-        }
-
-
-
-        public void SetUp(int noPins)
-        {
-            this.noPins = noPins;
+            noPins = 10;
         }
 
         public void TakePins(int pinsTaken)
         {
             noPins -= pinsTaken;
         }
-        public void getNoPins(int noPins)
+        public void getNoPins()
         {
             Console.WriteLine($"There are {noPins} pins left");
         }

@@ -2,14 +2,43 @@
 
 namespace Hemuppgift_Arv_Temp.Game
 {
-    public class TakePins
+    public class TakePinsGame
     {
         //Här är main klassen där koden ska testas, lägg in i mappen
         static void Main(string[] args)
         {
-            Board spel = new Board(30);
+            Board spel = new ();
+            HumanPlayer player1 = new ();
+            ComputerPlayer CP1 = new();
+
+            spel.SetUp();
+            player1.getUserID();
+            CP1.getUserID();
+
             
-            while (noPins <=0)
+
+            while (spel.noPins > 0)
+            {               
+                player1.noTakePins();              
+                spel.TakePins(player1.pinsTaken);
+                Console.WriteLine("------------------");
+                if( spel.noPins == 0)
+                {
+                    Console.WriteLine(player1.Name + " wins!");
+                    break;
+                }
+                spel.getNoPins();
+
+                CP1.noTakePins();
+                spel.TakePins(CP1.pinsTaken);
+                Console.WriteLine("------------------");
+                if (spel.noPins == 0)
+                {
+                    Console.WriteLine("ROBOTPLAYER500 wins!");
+                    break;
+                }
+                spel.getNoPins();
+            }
 
 
            

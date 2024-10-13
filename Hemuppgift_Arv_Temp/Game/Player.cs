@@ -8,9 +8,9 @@ namespace Hemuppgift_Arv_Temp.Game
 {
      public abstract class Player
     { 
-        public int pinsTaken {  get; protected set; }
+        public int pinsTaken {  get; set; }
 
         public abstract string getUserID();
-        public abstract int TakePins();
+        public abstract int noTakePins();
     }
 }

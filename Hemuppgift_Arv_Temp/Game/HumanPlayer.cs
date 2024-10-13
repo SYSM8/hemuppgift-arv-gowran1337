@@ -9,37 +9,43 @@ namespace Hemuppgift_Arv_Temp.Game
     internal class HumanPlayer:Player
     {
         public string Name { get; set; }
-        public HumanPlayer(string name)
-        {
-            this.Name = name;
-        }
+       
+        
         public override string getUserID()
         {
             Console.WriteLine("Write your name");
-            string Name = Console.ReadLine();
+            Name = Console.ReadLine();
+            Console.Clear();
             return Name;
         }
 
 
-
-
-        public override int TakePins()
+        public override int noTakePins()
         {
+
             while (true) //en loop så att metoden kan avslutas ifall använder skriver in annat än 1/2
             {
-                Console.WriteLine("Take 1 or 2 pins?");
-                int pinsTaken = Convert.ToInt32(Console.ReadLine());
-                if (pinsTaken == 1 || pinsTaken == 2)
+                try
                 {
-                    Console.WriteLine($"{pinsTaken} was taken!");
-                    return pinsTaken;
+                    Console.WriteLine($"Will {Name} take 1 or 2 pins?");
+                    pinsTaken = Convert.ToInt32(Console.ReadLine());
+                    if (pinsTaken == 1 || pinsTaken == 2)
+                    {
+                        Console.WriteLine($"{Name} takes {pinsTaken} pins!");
+                        return pinsTaken;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong! you may only take 1 or 2 pins");
+                    }
                 }
-                else
+                catch (FormatException)
                 {
-                    Console.WriteLine("Choose 1 or 2");
+                    Console.WriteLine("Fel format");
                 }
-            }
-        }
-        }
-    }
+           }
+       }        
+   }
+ 
+}
 
