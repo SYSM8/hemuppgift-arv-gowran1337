@@ -24,6 +24,7 @@ namespace Hemuppgift_Arv_Temp.Game
                 Console.WriteLine("------------------");
                 if( spel.noPins == 0)
                 {
+                    Console.Clear();
                     Console.WriteLine(player1.Name + " wins!");
                     break;
                 }
@@ -34,6 +35,7 @@ namespace Hemuppgift_Arv_Temp.Game
                 Console.WriteLine("------------------");
                 if (spel.noPins == 0)
                 {
+                    Console.Clear();
                     Console.WriteLine("ROBOTPLAYER500 wins!");
                     break;
                 }
